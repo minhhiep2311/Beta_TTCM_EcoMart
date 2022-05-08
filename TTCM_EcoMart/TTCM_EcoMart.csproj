@@ -1,0 +1,534 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E01D85D4-DBC0-4DDD-BCB4-5357819B23F1}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TTCM_EcoMart</RootNamespace>
+    <AssemblyName>TTCM_EcoMart</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44313</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\NguoiDungController.cs" />
+    <Compile Include="Controllers\SanPhamController.cs" />
+    <Compile Include="Controllers\TimKiemController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Beta_DbContext.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Beta_DbContext.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Beta_DbContext.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Beta_DbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Beta_DbContext.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Beta_DbContext.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sysdiagram.cs">
+      <DependentUpon>Beta_DbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tblAccount.cs">
+      <DependentUpon>Beta_DbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tblBill.cs">
+      <DependentUpon>Beta_DbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tblBill_details.cs">
+      <DependentUpon>Beta_DbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tblCategory.cs">
+      <DependentUpon>Beta_DbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tblImage.cs">
+      <DependentUpon>Beta_DbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tblPayment.cs">
+      <DependentUpon>Beta_DbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tblProduct.cs">
+      <DependentUpon>Beta_DbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tblSale.cs">
+      <DependentUpon>Beta_DbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tblWishlist.cs">
+      <DependentUpon>Beta_DbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tblWishlist_details.cs">
+      <DependentUpon>Beta_DbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="assets\css\animate.min.css" />
+    <Content Include="assets\css\backToTop.css" />
+    <Content Include="assets\css\bootstrap.min.css" />
+    <Content Include="assets\css\default.css" />
+    <Content Include="assets\css\flaticon.css" />
+    <Content Include="assets\css\fontAwesome5Pro.css" />
+    <Content Include="assets\css\images\ui-icons_444444_256x240.html" />
+    <Content Include="assets\css\images\ui-icons_555555_256x240.html" />
+    <Content Include="assets\css\images\ui-icons_777620_256x240.html" />
+    <Content Include="assets\css\images\ui-icons_777777_256x240.html" />
+    <Content Include="assets\css\images\ui-icons_cc0000_256x240.html" />
+    <Content Include="assets\css\images\ui-icons_ffffff_256x240.html" />
+    <Content Include="assets\css\magnific-popup.css" />
+    <Content Include="assets\css\meanmenu.css" />
+    <Content Include="assets\css\nice-select.css" />
+    <Content Include="assets\css\owl.carousel.min.css" />
+    <Content Include="assets\css\owl.video.play.html" />
+    <Content Include="assets\css\preloader.css" />
+    <Content Include="assets\css\style.css" />
+    <Content Include="assets\css\swiper-bundle.css" />
+    <Content Include="assets\css\ui-range-slider.css" />
+    <Content Include="assets\fonts\fa-brands-400.svg" />
+    <Content Include="assets\fonts\fa-duotone-900.svg" />
+    <Content Include="assets\fonts\fa-light-300.svg" />
+    <Content Include="assets\fonts\fa-regular-400.svg" />
+    <Content Include="assets\fonts\fa-solid-900.svg" />
+    <Content Include="assets\fonts\flaticona2a6.svg" />
+    <Content Include="assets\fonts\index.html" />
+    <Content Include="assets\img\about\1990.png" />
+    <Content Include="assets\img\about\about-thumb.jpg" />
+    <Content Include="assets\img\about\speciality-thumb.jpg" />
+    <Content Include="assets\img\apps\app-store-1.png" />
+    <Content Include="assets\img\apps\app-store-2.png" />
+    <Content Include="assets\img\bag\1.jpg" />
+    <Content Include="assets\img\bag\2.jpg" />
+    <Content Include="assets\img\bag\3.jpg" />
+    <Content Include="assets\img\banner\banner-1-1.jpg" />
+    <Content Include="assets\img\banner\banner-1-2.jpg" />
+    <Content Include="assets\img\banner\banner-1-3.jpg" />
+    <Content Include="assets\img\banner\banner-2-1.jpg" />
+    <Content Include="assets\img\banner\banner-2-2.jpg" />
+    <Content Include="assets\img\banner\banner-2-3.jpg" />
+    <Content Include="assets\img\banner\banner-3-1.jpg" />
+    <Content Include="assets\img\banner\banner-3-2.jpg" />
+    <Content Include="assets\img\bg\newsletter-bg.png" />
+    <Content Include="assets\img\bg\page-title-bg.jpg" />
+    <Content Include="assets\img\blog\b-1.jpg" />
+    <Content Include="assets\img\blog\b-2.jpg" />
+    <Content Include="assets\img\blog\b-3.jpg" />
+    <Content Include="assets\img\blog\b-4.jpg" />
+    <Content Include="assets\img\cards\card-1.png" />
+    <Content Include="assets\img\cards\card-2.png" />
+    <Content Include="assets\img\cards\card-3.png" />
+    <Content Include="assets\img\cards\card-4.png" />
+    <Content Include="assets\img\category_banner\category-banner1.jpg" />
+    <Content Include="assets\img\category_banner\category-banner2.jpg" />
+    <Content Include="assets\img\category_banner\category-banner3.jpg" />
+    <Content Include="assets\img\category_banner\category-banner4.jpg" />
+    <Content Include="assets\img\category_banner\category-banner5.jpg" />
+    <Content Include="assets\img\category_banner\category-banner6.jpg" />
+    <Content Include="assets\img\combo_pack\pack-1-1.jpg" />
+    <Content Include="assets\img\combo_pack\pack-1-2.jpg" />
+    <Content Include="assets\img\combo_pack\pack-1-3.jpg" />
+    <Content Include="assets\img\combo_pack\pack-1-all.jpg" />
+    <Content Include="assets\img\favicon.png" />
+    <Content Include="assets\img\jacket\1\1.jpg" />
+    <Content Include="assets\img\jacket\1\4.jpg" />
+    <Content Include="assets\img\jacket\2\1.jpg" />
+    <Content Include="assets\img\jacket\2\2.jpg" />
+    <Content Include="assets\img\jacket\2\3.jpg" />
+    <Content Include="assets\img\logo\logo-2-w.png" />
+    <Content Include="assets\img\logo\logo-bl-br.png" />
+    <Content Include="assets\img\logo\logo-bl-p.png" />
+    <Content Include="assets\img\logo\logo-bl-tr.png" />
+    <Content Include="assets\img\logo\logo-bl.png" />
+    <Content Include="assets\img\logo\logo-text.png" />
+    <Content Include="assets\img\logo\preloader.svg" />
+    <Content Include="assets\img\member\member-img-01.png" />
+    <Content Include="assets\img\member\member-img-02.png" />
+    <Content Include="assets\img\member\member-img-04.png" />
+    <Content Include="assets\img\pant\1\1.jpg" />
+    <Content Include="assets\img\pant\1\4.jpg" />
+    <Content Include="assets\img\pant\2\1.jpg" />
+    <Content Include="assets\img\pant\2\3.jpg" />
+    <Content Include="assets\img\pant\2\5.jpg" />
+    <Content Include="assets\img\product\1.png" />
+    <Content Include="assets\img\product\10.png" />
+    <Content Include="assets\img\product\11.png" />
+    <Content Include="assets\img\product\12.png" />
+    <Content Include="assets\img\product\2.png" />
+    <Content Include="assets\img\product\3.png" />
+    <Content Include="assets\img\product\4.png" />
+    <Content Include="assets\img\product\5.png" />
+    <Content Include="assets\img\product\6.png" />
+    <Content Include="assets\img\product\7.png" />
+    <Content Include="assets\img\product\8.png" />
+    <Content Include="assets\img\product\800_1034\Image-1-1.jpg" />
+    <Content Include="assets\img\product\800_1034\Image-1-2.jpg" />
+    <Content Include="assets\img\product\800_1034\Image-10-1.jpg" />
+    <Content Include="assets\img\product\800_1034\Image-11-1.jpg" />
+    <Content Include="assets\img\product\800_1034\Image-12-1.jpg" />
+    <Content Include="assets\img\product\800_1034\Image-13-1.jpg" />
+    <Content Include="assets\img\product\800_1034\Image-14-1.jpg" />
+    <Content Include="assets\img\product\800_1034\Image-15-1.jpg" />
+    <Content Include="assets\img\product\800_1034\Image-16-1.jpg" />
+    <Content Include="assets\img\product\800_1034\Image-2-1.jpg" />
+    <Content Include="assets\img\product\800_1034\Image-3-1.jpg" />
+    <Content Include="assets\img\product\800_1034\Image-4-1.jpg" />
+    <Content Include="assets\img\product\800_1034\Image-5-1.jpg" />
+    <Content Include="assets\img\product\800_1034\Image-6-1.jpg" />
+    <Content Include="assets\img\product\800_1034\Image-7-1.jpg" />
+    <Content Include="assets\img\product\800_1034\Image-8-1.jpg" />
+    <Content Include="assets\img\product\800_1034\Image-9-1.jpg" />
+    <Content Include="assets\img\product\9.png" />
+    <Content Include="assets\img\product\Adidas\dame_8_china.jpg" />
+    <Content Include="assets\img\product\Adidas\dropset_trainers_blue.jpg" />
+    <Content Include="assets\img\product\Adidas\dropset_trainers_gray.jpg" />
+    <Content Include="assets\img\product\Adidas\dropset_trainers_pink.jpg" />
+    <Content Include="assets\img\product\Adidas\Harden_vol_6_shoes_black_white.jpg" />
+    <Content Include="assets\img\product\Adidas\Harden_vol_6_shoes_red_white_black.jpg" />
+    <Content Include="assets\img\product\Adidas\response_shoes_black_white.jpg" />
+    <Content Include="assets\img\product\Adidas\ultra_boost_22_black.jpg" />
+    <Content Include="assets\img\product\product-img1.jpg" />
+    <Content Include="assets\img\product\product-img2.jpg" />
+    <Content Include="assets\img\product\product-img3.jpg" />
+    <Content Include="assets\img\product\product-img4.jpg" />
+    <Content Include="assets\img\product_category\product-cat-1.jpg" />
+    <Content Include="assets\img\product_category\product-cat-10.jpg" />
+    <Content Include="assets\img\product_category\product-cat-11.jpg" />
+    <Content Include="assets\img\product_category\product-cat-12.jpg" />
+    <Content Include="assets\img\product_category\product-cat-13.jpg" />
+    <Content Include="assets\img\product_category\product-cat-14.jpg" />
+    <Content Include="assets\img\product_category\product-cat-15.jpg" />
+    <Content Include="assets\img\product_category\product-cat-2.jpg" />
+    <Content Include="assets\img\product_category\product-cat-3.jpg" />
+    <Content Include="assets\img\product_category\product-cat-4.jpg" />
+    <Content Include="assets\img\product_category\product-cat-5.jpg" />
+    <Content Include="assets\img\product_category\product-cat-6.jpg" />
+    <Content Include="assets\img\product_category\product-cat-7.jpg" />
+    <Content Include="assets\img\product_category\product-cat-8.jpg" />
+    <Content Include="assets\img\product_category\product-cat-9.jpg" />
+    <Content Include="assets\img\shirt\1\1.jpg" />
+    <Content Include="assets\img\shirt\1\3.jpg" />
+    <Content Include="assets\img\shirt\1\5.jpg" />
+    <Content Include="assets\img\shirt\1\7.jpg" />
+    <Content Include="assets\img\shirt\2\1.jpg" />
+    <Content Include="assets\img\shirt\2\4.jpg" />
+    <Content Include="assets\img\shirt\2\7.jpg" />
+    <Content Include="assets\img\shirt\3\1.jpg" />
+    <Content Include="assets\img\shirt\3\2.jpg" />
+    <Content Include="assets\img\shirt\3\3.jpg" />
+    <Content Include="assets\img\shirt\3\4.jpg" />
+    <Content Include="assets\img\shirt\3\5.jpg" />
+    <Content Include="assets\img\shirt\3\9.jpg" />
+    <Content Include="assets\img\shoe\1.jpg" />
+    <Content Include="assets\img\sunglass\1.jpg" />
+    <Content Include="assets\img\sunglass\10.jpg" />
+    <Content Include="assets\img\sunglass\11.jpg" />
+    <Content Include="assets\img\sunglass\14.jpg" />
+    <Content Include="assets\img\sunglass\2.jpg" />
+    <Content Include="assets\img\sunglass\4.jpg" />
+    <Content Include="assets\img\sunglass\5.jpg" />
+    <Content Include="assets\img\sunglass\7.jpg" />
+    <Content Include="assets\img\sunglass\8.jpg" />
+    <Content Include="assets\img\testimonial\author-1.jpg" />
+    <Content Include="assets\img\testimonial\course-reviews-1.png" />
+    <Content Include="assets\img\testimonial\course-reviews-2.png" />
+    <Content Include="assets\img\testimonial\course-reviews-3.png" />
+    <Content Include="assets\js\ajax-form.js" />
+    <Content Include="assets\js\backToTop.js" />
+    <Content Include="assets\js\bootstrap.bundle.min.js" />
+    <Content Include="assets\js\counterup.min.js" />
+    <Content Include="assets\js\imagesloaded.pkgd.min.js" />
+    <Content Include="assets\js\isotope.pkgd.min.js" />
+    <Content Include="assets\js\jquery-ui-slider-range.js" />
+    <Content Include="assets\js\magnific-popup.min.js" />
+    <Content Include="assets\js\main.js" />
+    <Content Include="assets\js\meanmenu.js" />
+    <Content Include="assets\js\nice-select.min.js" />
+    <Content Include="assets\js\owl.carousel.min.js" />
+    <Content Include="assets\js\parallax.min.js" />
+    <Content Include="assets\js\swiper-bundle.min.js" />
+    <Content Include="assets\js\vendor\jquery-3.6.0.min.js" />
+    <Content Include="assets\js\vendor\waypoints.min.js" />
+    <Content Include="assets\js\wow.min.js" />
+    <Content Include="assets\my_own_js\login_validation.js" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\PagedList.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Models\Beta_DbContext.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Beta_DbContext.edmx</DependentUpon>
+      <LastGenOutput>Beta_DbContext.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\Beta_DbContext.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Beta_DbContext.edmx</DependentUpon>
+      <LastGenOutput>Beta_DbContext.cs</LastGenOutput>
+    </Content>
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="assets\fonts\fa-brands-400.eot" />
+    <Content Include="assets\fonts\fa-brands-400.ttf" />
+    <Content Include="assets\fonts\fa-brands-400.woff" />
+    <Content Include="assets\fonts\fa-brands-400.woff2" />
+    <Content Include="assets\fonts\fa-brands-400d41d.eot" />
+    <Content Include="assets\fonts\fa-duotone-900.eot" />
+    <Content Include="assets\fonts\fa-duotone-900.ttf" />
+    <Content Include="assets\fonts\fa-duotone-900.woff" />
+    <Content Include="assets\fonts\fa-duotone-900.woff2" />
+    <Content Include="assets\fonts\fa-duotone-900d41d.eot" />
+    <Content Include="assets\fonts\fa-light-300.eot" />
+    <Content Include="assets\fonts\fa-light-300.ttf" />
+    <Content Include="assets\fonts\fa-light-300.woff" />
+    <Content Include="assets\fonts\fa-light-300.woff2" />
+    <Content Include="assets\fonts\fa-light-300d41d.eot" />
+    <Content Include="assets\fonts\fa-regular-400.eot" />
+    <Content Include="assets\fonts\fa-regular-400.ttf" />
+    <Content Include="assets\fonts\fa-regular-400.woff" />
+    <Content Include="assets\fonts\fa-regular-400.woff2" />
+    <Content Include="assets\fonts\fa-regular-400d41d.eot" />
+    <Content Include="assets\fonts\fa-solid-900.eot" />
+    <Content Include="assets\fonts\fa-solid-900.ttf" />
+    <Content Include="assets\fonts\fa-solid-900.woff" />
+    <Content Include="assets\fonts\fa-solid-900.woff2" />
+    <Content Include="assets\fonts\fa-solid-900d41d.eot" />
+    <Content Include="assets\fonts\flaticona2a6.eot" />
+    <Content Include="assets\fonts\flaticona2a6.woff" />
+    <Content Include="assets\fonts\flaticona2a6.woff2" />
+    <EntityDeploy Include="Models\Beta_DbContext.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Beta_DbContext.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\Beta_DbContext.edmx.diagram">
+      <DependentUpon>Beta_DbContext.edmx</DependentUpon>
+    </Content>
+    <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.4.1.js" />
+    <Content Include="Scripts\jquery-3.4.1.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\_CustomLayout.cshtml" />
+    <Content Include="Views\TimKiem\SearchResults.cshtml" />
+    <Content Include="Views\NguoiDung\DangNhap.cshtml" />
+    <Content Include="Views\NguoiDung\DangKy.cshtml" />
+    <Content Include="Views\SanPham\MenProducts.cshtml" />
+    <Content Include="Views\SanPham\MenCategories.cshtml" />
+    <Content Include="Views\SanPham\AllMenProductsPartialView.cshtml" />
+    <Content Include="Views\SanPham\Categorize_men_product.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Views\Login\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>62674</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44313/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

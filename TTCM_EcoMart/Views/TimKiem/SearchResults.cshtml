@@ -1,0 +1,116 @@
+﻿@using TTCM_EcoMart.Models;
+@using PagedList.Mvc;
+@model PagedList.IPagedList<tblProduct>
+@{
+    ViewBag.Title = "SearchResults";
+    Layout = "~/Views/Shared/_CustomLayout.cshtml";
+}
+
+<h2 style="text-align: center;">SearchResults</h2>
+<h6 style="text-align: center;">@ViewBag.ThongBao</h6style="text-align:>
+<!-- product area start  -->
+<section class="product-area pt-120 pb-120">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-xl-8">
+                <div class="section-title text-center">
+                    <h2 class="section-main-title mb-35">Products of the week</h2>
+                </div>
+            </div>
+        </div>
+        <div class="product-tab-wrapper">
+            <div class="product-tab-nav mb-60">
+                <nav>
+                    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                        <button class="nav-link active" id="nav-1-tab" data-bs-toggle="tab" data-bs-target="#nav-1"
+                                type="button" role="tab" aria-controls="nav-1" aria-selected="true">
+                            Best Seller <span class="total-product">[57]</span>
+                        </button>
+                        <button class="nav-link" id="nav-2-tab" data-bs-toggle="tab" data-bs-target="#nav-2"
+                                type="button" role="tab" aria-controls="nav-2" aria-selected="false">
+                            Hot Collection<span class="total-product">
+                                [25]
+                            </span>
+                        </button>
+                        <button class="nav-link" id="nav-3-tab" data-bs-toggle="tab" data-bs-target="#nav-3"
+                                type="button" role="tab" aria-controls="nav-3" aria-selected="false">
+                            Trendy<span class="total-product">[32]</span>
+                        </button>
+                        <button class="nav-link" id="nav-4-tab" data-bs-toggle="tab" data-bs-target="#nav-4"
+                                type="button" role="tab" aria-controls="nav-4" aria-selected="false">
+                            New Arrival<span class="total-product">
+                                [64]
+                            </span>
+                        </button>
+                    </div>
+                </nav>
+            </div>
+            <div class="product-tab-content">
+                <div class="tab-content" id="nav-tabContent">
+
+                    <div class="tab-pane fade show active" id="nav-1" role="tabpanel" aria-labelledby="nav-1-tab">
+                        <div class="products-wrapper">
+
+                            @foreach (var item in Model)
+                            {
+                                <div class="single-product">
+                                    <div class="product-image pos-rel">
+                                        <a href="shop-details.html" class="">
+                                            <img src="@Url.Content("~/assets/img/product/Adidas/" + item.ImagePath)"
+                                        </a>
+
+                                        <div class="product-action">
+                                            <a href="#" class="quick-view-btn"><i class="fal fa-eye"></i></a>
+                                            <a href="#" class="wishlist-btn"><i class="fal fa-heart"></i></a>
+                                            <a href="#" class="compare-btn"><i class="fal fa-exchange"></i></a>
+                                        </div>
+                                        <div class="product-action-bottom">
+                                            <a href="cart.html" class="add-cart-btn">
+                                                <i class="fal fa-shopping-bag"></i>Add to Cart
+                                            </a>
+                                        </div>
+                                        <div class="product-sticker-wrapper">
+                                            <span class="product-sticker new">New</span>
+                                        </div>
+                                    </div>
+                                    <div class="product-desc">
+                                        <div class="product-name"><a href="shop-details.html">@item.product_Name</a></div>
+                                        <div class="product-price">
+                                            <span class="price-now">@item.prices</span>
+                                        </div>
+                                        <ul class="product-color-nav">
+                                            <li class="cl-brown active">
+                                                <img src="assets/img/bag/1.jpg" alt="img">
+                                            </li>
+                                            <li class="cl-ash">
+                                                <img src="assets/img/bag/2.jpg" alt="img">
+                                            </li>
+                                            <li class="cl-black">
+                                                <img src="assets/img/bag/3.jpg" alt="img">
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+
+
+                    </div>
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="product-area-btn mt-10 text-center">
+                        <a href="shop.html" class="border-btn">View All Products</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+</section>
+
+<div class="w3-center w3-padding-32">
+    <div class="w3-bar">
+        <a href="#" class="w3-bar-item w3-button w3-hover-black">@Html.PagedListPager(Model, page => Url.Action("SeachResults", new { page = page, searchkey = ViewBag.keyword }))</a>
+    </div>
+</div>

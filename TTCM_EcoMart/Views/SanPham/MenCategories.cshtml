@@ -1,0 +1,11 @@
+﻿@using TTCM_EcoMart.Models;
+@model List<tblCategory>
+
+@foreach(var item in Model) { 
+    if(item.Gender == 1) 
+    {
+        <a href="@Url.Action("Categorize_men_product", "SanPham", new {@Category_ID = item.Category_ID, @Gender = item.Gender})" class="category-item">
+            <div class="category-name">@item.Kinds</div> 
+        </a>
+    }
+}
